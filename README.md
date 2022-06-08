@@ -18,9 +18,8 @@ cp cluster-orig.yaml cluster.yaml
 # Install Crossplane CLI from https://crossplane.io/docs/v1.3/getting-started/install-configure.html#start-with-a-self-hosted-crossplane
 
 ### Please watch https://youtu.be/mCesuGk-Fks if you are not familiar with k3d
-### Feel free to use any other Kubernetes platform
+### From any K8s platform
 ```sh
-k3d cluster create --config k3d.yaml
 
 kubectl create namespace team-a
 
@@ -41,15 +40,17 @@ kubectl apply --filename definition.yaml
 
 ## Setup GCP #
 
-
+```sh
 export PROJECT_ID=devops-toolkit-$(date +%Y%m%d%H%M%S)
 
 gcloud projects create $PROJECT_ID
 
 echo "https://console.cloud.google.com/marketplace/product/google/container.googleapis.com?project=$PROJECT_ID"
+```
 
 #### Open the URL and *ENABLE* the API
 
+```sh
 export SA_NAME=devops-toolkit
 
 export SA="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
@@ -75,9 +76,10 @@ kubectl --namespace crossplane-system \
 
 kubectl crossplane install provider \
     crossplane/provider-gcp:v0.17.0
+```
 
 #### Wait for a few moments for the provider to be up-and-running
-
+```sh
 echo "apiVersion: gcp.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -93,15 +95,17 @@ spec:
     | kubectl apply --filename -
 
 kubectl apply --filename gcp.yaml
-
+```
 
 ## Setup AWS 
 
 
 #### Replace `[...]` with your access key ID`
+```
 export AWS_ACCESS_KEY_ID=[...]
-
+```
 #### Replace `[...]` with your secret access key
+```sh
 export AWS_SECRET_ACCESS_KEY=[...]
 
 echo "[default]
@@ -115,7 +119,7 @@ kubectl --namespace crossplane-system \
 
 kubectl crossplane install provider \
     crossplane/provider-aws:v0.19.0
-
+```
 #### Wait for a few moments for the provider to be up-and-running
 
 echo "apiVersion: aws.crossplane.io/v1beta1
