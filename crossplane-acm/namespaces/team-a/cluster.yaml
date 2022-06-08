@@ -5,7 +5,7 @@ metadata:
   labels:
     cluster-owner: vfarcic
   annotations:
-    #configmanagement.gke.io/cluster-selector: crossplane
+    configmanagement.gke.io/cluster-selector: crossplane
 spec:
   compositionRef:
     # Possible values cluster-google, cluster-azure, cluster-aws
@@ -16,5 +16,5 @@ spec:
     # version: "1.20"
     # minNodeCount: 2
   writeConnectionSecretToRef:
-    #namespace: team-a
+    namespace: team-a
     name: cluster
