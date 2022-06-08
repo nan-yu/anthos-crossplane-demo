@@ -4,6 +4,10 @@
 #### - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
 #### - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
 
+### Troubleshooting
+```sh
+kubectl get events -n <namespace> --sort-by={'lastTimestamp}
+```
 
 ### Setup 
 
