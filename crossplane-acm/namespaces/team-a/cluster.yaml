@@ -5,7 +5,7 @@ metadata:
   labels:
     cluster-owner: vfarcic
   annotations:
-    configmanagement.gke.io/cluster-selector: crossplane
+    #configmanagement.gke.io/cluster-selector: crossplane
 spec:
   compositionRef:
     # Possible values cluster-google, cluster-azure, cluster-aws
