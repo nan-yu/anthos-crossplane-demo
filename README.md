@@ -121,7 +121,7 @@ kubectl crossplane install provider \
     crossplane/provider-aws:v0.19.0
 ```
 #### Wait for a few moments for the provider to be up-and-running
-
+```sh
 echo "apiVersion: aws.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -136,10 +136,10 @@ spec:
     | kubectl apply --filename -
 
 kubectl apply --filename aws.yaml
-
+```
 
 ## Setup Azure 
-
+```sh
 az ad sp create-for-rbac \
     --sdk-auth \
     --role Owner \
@@ -177,9 +177,9 @@ kubectl --namespace crossplane-system \
 
 kubectl crossplane install provider \
     crossplane/provider-azure:v0.16.1
-
+```
 #### Wait for a few moments for the provider to be up-and-running
-
+```sh
 echo "apiVersion: azure.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -194,17 +194,17 @@ spec:
     | kubectl apply --filename -
 
 kubectl apply --filename azure.yaml
-
+```
 ###########################
 # Creating infrastructure #
 ###########################
-
+```sh
 cat cluster.yaml
-
+```
 # Change `spec.compositionRef.name` to `cluster-gcp` or `cluster-azure` if not using AWS
-
+```sh
 kubectl apply --filename cluster.yaml
-
+```
 #######################
 # Defining composites #
 #######################
