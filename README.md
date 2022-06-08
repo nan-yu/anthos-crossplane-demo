@@ -1,18 +1,12 @@
-# Source: https://gist.github.com/2f6ef41745fad5bf0d7c023c1261d77c
-
-###########################################################################
-# How To Shift Left Infrastructure Management Using Crossplane Composites #
-# https://youtu.be/AtbS1u2j7po                                            #
-###########################################################################
 
 # Referenced videos:
 # - Crossplane - GitOps-based Infrastructure as Code through Kubernetes API: https://youtu.be/n8KjVmuHm7A
 # - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
 # - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
 
-#########
-# Setup #
-#########
+
+### Setup 
+
 
 git clone https://github.com/vfarcic/crossplane-composite-demo.git
 
@@ -22,8 +16,8 @@ cp cluster-orig.yaml cluster.yaml
 
 # Install Crossplane CLI from https://crossplane.io/docs/v1.3/getting-started/install-configure.html#start-with-a-self-hosted-crossplane
 
-# Please watch https://youtu.be/mCesuGk-Fks if you are not familiar with k3d
-# Feel free to use any other Kubernetes platform
+### Please watch https://youtu.be/mCesuGk-Fks if you are not familiar with k3d
+### Feel free to use any other Kubernetes platform
 k3d cluster create --config k3d.yaml
 
 kubectl create namespace team-a
@@ -41,11 +35,10 @@ helm upgrade --install \
 
 kubectl apply --filename definition.yaml
 
-# Run the rest of the setup instructions specific to your provider, or, if you are brave, for all of them.
+#### Run the rest of the setup instructions specific to your provider, or, if you are brave, for all of them.
 
-#############
-# Setup GCP #
-#############
+## Setup GCP #
+
 
 export PROJECT_ID=devops-toolkit-$(date +%Y%m%d%H%M%S)
 
@@ -53,7 +46,7 @@ gcloud projects create $PROJECT_ID
 
 echo "https://console.cloud.google.com/marketplace/product/google/container.googleapis.com?project=$PROJECT_ID"
 
-# Open the URL and *ENABLE* the API
+#### Open the URL and *ENABLE* the API
 
 export SA_NAME=devops-toolkit
 
@@ -81,7 +74,7 @@ kubectl --namespace crossplane-system \
 kubectl crossplane install provider \
     crossplane/provider-gcp:v0.17.0
 
-# Wait for a few moments for the provider to be up-and-running
+#### Wait for a few moments for the provider to be up-and-running
 
 echo "apiVersion: gcp.crossplane.io/v1beta1
 kind: ProviderConfig
@@ -99,14 +92,14 @@ spec:
 
 kubectl apply --filename gcp.yaml
 
-#############
-# Setup AWS #
-#############
 
-# Replace `[...]` with your access key ID`
+## Setup AWS 
+
+
+#### Replace `[...]` with your access key ID`
 export AWS_ACCESS_KEY_ID=[...]
 
-# Replace `[...]` with your secret access key
+#### Replace `[...]` with your secret access key
 export AWS_SECRET_ACCESS_KEY=[...]
 
 echo "[default]
@@ -121,7 +114,7 @@ kubectl --namespace crossplane-system \
 kubectl crossplane install provider \
     crossplane/provider-aws:v0.19.0
 
-# Wait for a few moments for the provider to be up-and-running
+#### Wait for a few moments for the provider to be up-and-running
 
 echo "apiVersion: aws.crossplane.io/v1beta1
 kind: ProviderConfig
@@ -138,9 +131,8 @@ spec:
 
 kubectl apply --filename aws.yaml
 
-###############
-# Setup Azure #
-###############
+
+## Setup Azure 
 
 az ad sp create-for-rbac \
     --sdk-auth \
@@ -180,7 +172,7 @@ kubectl --namespace crossplane-system \
 kubectl crossplane install provider \
     crossplane/provider-azure:v0.16.1
 
-# Wait for a few moments for the provider to be up-and-running
+#### Wait for a few moments for the provider to be up-and-running
 
 echo "apiVersion: azure.crossplane.io/v1beta1
 kind: ProviderConfig
