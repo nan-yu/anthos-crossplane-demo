@@ -1,23 +1,25 @@
 
-# Referenced videos:
-# - Crossplane - GitOps-based Infrastructure as Code through Kubernetes API: https://youtu.be/n8KjVmuHm7A
-# - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
-# - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
+#### Referenced videos:
+#### - Crossplane - GitOps-based Infrastructure as Code through Kubernetes API: https://youtu.be/n8KjVmuHm7A
+#### - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
+#### - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
 
 
 ### Setup 
 
-
+```sh
 git clone https://github.com/vfarcic/crossplane-composite-demo.git
 
 cd crossplane-composite-demo
 
 cp cluster-orig.yaml cluster.yaml
+```
 
 # Install Crossplane CLI from https://crossplane.io/docs/v1.3/getting-started/install-configure.html#start-with-a-self-hosted-crossplane
 
 ### Please watch https://youtu.be/mCesuGk-Fks if you are not familiar with k3d
 ### Feel free to use any other Kubernetes platform
+```sh
 k3d cluster create --config k3d.yaml
 
 kubectl create namespace team-a
@@ -34,7 +36,7 @@ helm upgrade --install \
     --wait
 
 kubectl apply --filename definition.yaml
-
+```
 #### Run the rest of the setup instructions specific to your provider, or, if you are brave, for all of them.
 
 ## Setup GCP #
