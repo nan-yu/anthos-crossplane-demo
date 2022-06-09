@@ -264,6 +264,7 @@ kubectl get compositekubernetesclusters
 ####################################
 # Accessing the new infrastructure #
 ####################################
+```sh
 
 kubectl --namespace team-a \
     get secret cluster \
@@ -276,9 +277,11 @@ export KUBECONFIG=$PWD/kubeconfig.yaml
 kubectl get nodes
 
 kubectl get namespaces
+```
 
+```sh
 unset KUBECONFIG
-
+```
 ###########################
 # Updating infrastructure #
 ###########################
