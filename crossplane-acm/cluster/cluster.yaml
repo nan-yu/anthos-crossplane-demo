@@ -4,8 +4,8 @@ metadata:
   name: team-a
   labels:
     cluster-owner: vfarcic
-  annotations:
-    configmanagement.gke.io/cluster-selector: crossplane-2
+  #annotations:
+   # configmanagement.gke.io/cluster-selector: crossplane-2
 spec:
   compositionRef:
     # Possible values cluster-google, cluster-azure, cluster-aws
