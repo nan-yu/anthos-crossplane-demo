@@ -1,13 +1,14 @@
 
-#### Referenced videos:
-#### - Crossplane - GitOps-based Infrastructure as Code through Kubernetes API: https://youtu.be/n8KjVmuHm7A
-#### - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
-#### - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
-
-### Troubleshooting
+#### Troubleshooting
 ```sh
-kubectl get events -n <namespace> --sort-by={'lastTimestamp}
+kubectl get events -n <namespace> --sort-by={'lastTimestamp'}
 ```
+
+#### Referenced videos:
+ - Crossplane - GitOps-based Infrastructure as Code through Kubernetes API: https://youtu.be/n8KjVmuHm7A
+ - How to apply GitOps to everything - combining Argo CD and Crossplane: https://youtu.be/yrj4lmScKHQ
+ - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
+
 
 ### Setup 
 
