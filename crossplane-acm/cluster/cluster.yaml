@@ -16,3 +16,4 @@
 #  writeConnectionSecretToRef:
 #    namespace: b-team
 #    name: cluster
+
