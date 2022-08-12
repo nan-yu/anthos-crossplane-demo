@@ -12,7 +12,7 @@ spec:
     # Possible values small, medium, large
     nodeSize: medium
    # version: "1.22"
-    minNodeCount: 2
+    minNodeCount: 1
   writeConnectionSecretToRef:
     namespace: b-team
     name: cluster
