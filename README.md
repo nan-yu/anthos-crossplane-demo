@@ -4,5 +4,5 @@ Uncomment the file in crossplane-acm/clusters to create a GKE or EKS cluster
 
 ### Troubleshooting
 ```sh
-kubectl get events -n default--sort-by={'lastTimestamp'}
+kubectl get events -n default --sort-by={'lastTimestamp'}
 ```
