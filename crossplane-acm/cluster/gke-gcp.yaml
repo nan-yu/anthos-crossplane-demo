@@ -1,0 +1,18 @@
+apiVersion: demo.anthos.com/v1
+kind: CompositeCluster 
+metadata:
+  name: b-team
+  labels:
+    cluster-owner: bkauf
+spec:
+  compositionRef:
+    # Possible values cluster-gcp, cluster-azure, cluster-aws
+    name: cluster-gcp
+  parameters:
+    # Possible values small, medium, large
+    nodeSize: medium
+    k8sVersion: "1.23"
+    minNodeCount: 3  
+  writeConnectionSecretToRef:
+    namespace: default
+    name: b-team
