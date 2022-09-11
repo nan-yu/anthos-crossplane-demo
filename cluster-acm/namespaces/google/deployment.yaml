@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-production
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: frontend-production
+      name: frontend
+    spec:
+      containers:
+      - image: bkauf/gcpdemo
+        env:
+        - name: CLOUD
+          value: "gcp"
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+        name: webserver
+        ports:
+        - containerPort: 8080
+          name: frontend
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 5
