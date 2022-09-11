@@ -24,17 +24,8 @@ spec:
         - name: CLOUD
           value: "gcp"
         imagePullPolicy: Always
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
         name: webserver
         ports:
         - containerPort: 8080
           name: frontend
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 5
+       
