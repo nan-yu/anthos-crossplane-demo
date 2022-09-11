@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: google
+  name: google-tools
   labels:
     env: prod
   annotations:
