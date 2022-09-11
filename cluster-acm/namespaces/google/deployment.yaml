@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-production
+  name: security-tools
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-production
+      app: security-tools
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -15,8 +15,8 @@ spec:
   template:
     metadata:
       labels:
-        app: frontend-production
-      name: frontend
+        app: security-tools
+      name: securitytools
     spec:
       containers:
       - image: bkauf/gcpdemo
