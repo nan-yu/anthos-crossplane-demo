@@ -1,6 +1,6 @@
 **This Repo is not complete! Check back late October 2022 for the GA YAML**
 
-Demo to control a crossplane cluster with ACM to provision GKE on GCP or EKS on AWS clusters with full lifecycle manageemnt of the infrastructure and k8s configurations. 
+Demo to control a crossplane cluster with Anthos Config Sync to provision GKE on GCP or EKS on AWS clusters with full lifecycle management of the infrastructure and k8s configurations. 
 
 ![Anthos and Crossplane for full lifecycle management of Cloud Infrastructure and K8s configuration](https://github.com/bkauf/anthos-crossplane-demo/blob/master/anthos_crossplane.jpg?raw=true)
 
