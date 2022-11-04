@@ -1,13 +1,13 @@
 apiVersion: demo.anthos.com/v1
 kind: CompositeCluster 
 metadata:
-  name: b-team
+  name: a-team
   labels:
     cluster-owner: prod-cluster-2
 spec:
   compositionRef:
     # Possible values cluster-gcp, cluster-azure, cluster-aws
-    name: cluster-gcp
+    name: cluster-aws
   parameters:
     # Possible values small, medium, large
     nodeSize: medium
