@@ -7,7 +7,7 @@ metadata:
 spec:
   compositionRef:
     # Possible values gcp-node-pool
-    name: cluster-gcp
+    name: gcp-node-pool
   parameters:
     # Possible values small, medium, large
     clusterName: medium
