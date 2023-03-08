@@ -17,5 +17,5 @@ spec:
     adminUsers:
     - bkauf@google.com  
   writeConnectionSecretToRef:
-    namespace: team-a
+    namespace: default
     name: test-cluster
