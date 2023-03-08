@@ -9,6 +9,7 @@ spec:
     # Possible values gcp-node-pool
     name: gcp-node-pool
   parameters:
+    clusterName: "test-cluster-fd9rt-kcnxh"
     # Possible values small, medium, large
-    clusterName: medium
+    nodeSize: medium
     minNodeCount: 3
