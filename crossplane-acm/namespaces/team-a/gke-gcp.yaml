@@ -2,6 +2,7 @@ apiVersion: demo.anthos.com/v1
 kind: CompositeCluster 
 metadata:
   name: test-cluster
+  namespace: team-a
   labels:
     cluster-owner: prod-cluster-2
 spec:
