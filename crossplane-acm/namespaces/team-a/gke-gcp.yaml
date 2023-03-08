@@ -16,6 +16,6 @@ spec:
     minNodeCount: 3
     adminUsers:
     - bkauf@google.com  
-  writeConnectionSecretToRef:
-    namespace: default
-    name: b-team
+  #writeConnectionSecretToRef:
+  #  namespace: default
+  #  name: b-team
