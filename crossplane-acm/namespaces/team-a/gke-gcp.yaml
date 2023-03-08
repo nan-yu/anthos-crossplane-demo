@@ -1,5 +1,5 @@
 apiVersion: demo.anthos.com/v1
-kind: CompositeCluster 
+kind: Cluster
 metadata:
   name: test-cluster
   labels:
