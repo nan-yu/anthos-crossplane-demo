@@ -16,6 +16,6 @@ spec:
     minNodeCount: 3
     adminUsers:
     - bkauf@google.com  
-  writeConnectionSecretToRef:
-    namespace: default
-    name: test-cluster
+  #writeConnectionSecretToRef:
+  #  namespace: default
+  #  name: test-cluster
