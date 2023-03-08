@@ -2,7 +2,6 @@ apiVersion: demo.anthos.com/v1
 kind: CompositeCluster 
 metadata:
   name: test-cluster
-  namespace: team-a
   labels:
     cluster-owner: prod-cluster-2
 spec:
@@ -17,6 +16,6 @@ spec:
     minNodeCount: 3
     adminUsers:
     - bkauf@google.com  
-  #writeConnectionSecretToRef:
-  #  namespace: default
-  #  name: b-team
+  writeConnectionSecretToRef:
+    namespace: team-a
+    name: test-cluster
