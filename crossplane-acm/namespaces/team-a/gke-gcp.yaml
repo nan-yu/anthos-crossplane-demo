@@ -1,5 +1,3 @@
-
-
 apiVersion: demo.anthos.com/v1
 kind: Cluster
 metadata:
