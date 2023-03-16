@@ -1,0 +1,14 @@
+# Demo of mapping existing Azure Cluster to a claim
+apiVersion: demo.anthos.com/v1
+kind: Cluster
+metadata:
+  name: bkauf-cluster
+  labels:
+    cluster-owner: bkauf
+spec:
+  compositionRef:
+      # Possible values cluster-azure-aks-import
+    name: cluster-azure-aks-import
+  parameters:
+    externalName: bkauf-cluster
+
