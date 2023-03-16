@@ -10,5 +10,4 @@ spec:
       # Possible values cluster-azure-aks-import
     name: cluster-azure-aks-import
   parameters:
-    externalName: bkauf-cluster
-
+    externalName: "bkauf-cluster"
