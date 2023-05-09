@@ -1,7 +1,7 @@
 apiVersion: demo.anthos.com/v1
 kind: Cluster
 metadata:
-  name:brians-cluster
+  name: brians-cluster
   labels:
     cluster-owner: bkauf
 spec:
